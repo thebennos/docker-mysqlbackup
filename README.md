@@ -31,5 +31,14 @@ We made a decision matrix and played theoretical around.
 From the theory and the descision matrix we decided to run some backups daily and some backups only every 3 days and 
 database that are needed in frontend's additional incremental backups every hour. 
 
+This results in two docker images. 
+
+1. Running mydumper scripts as cron jobs inside the docker container (the full backups daily and ever 3 days)
+2. Some images where mydumper is running as daemon and make incremental backups every 60 minutes. 
+
+The databse dumps are stored on the servers for now. 
+Everyone needs to decide herself where to store it. 
+There are a lot of containers like "backup to S3" based on the duplicity tool or other known backup tools.
+It should be no problem with an additional docker images to aggregate the dumps from a volume and write it to an external storage. 
 
 
