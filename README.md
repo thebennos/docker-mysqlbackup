@@ -6,7 +6,8 @@ Works in multi threads and depending on the database it create a backup of a 500
 The needed time depends on the sql schema. If you have just one table that hold 500 Gb of data it takes longer, but if you 
 have 500 GB of data in hundreds of tables the multi-threading plays out the advantage of mydump and the backup is done in minutes
 
-In the Example folder are two scripts. 
+In the Example folder are two scripts.
+
 1. Run a full backup once - fullbackup.sh
 2. Runs a daemon and it does incremental backups every 60 minutes - incremental.sh
 
